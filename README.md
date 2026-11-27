@@ -51,3 +51,13 @@ bash ~/fb-us-money/tool/finish_setup.sh
 ```
 
 Skrip itu mengirim workflow, lalu menjalankan uji build `R1` dengan `publish=false`. Hasilnya di tab **Actions** repo.
+
+Status lanjutan: uji `R1` **sukses** (bug mapping audio ffmpeg sudah diperbaiki), lalu build **`all` sukses** menghasilkan 12 MP4 + 12 paket caption di `output/`. File tidak masuk git (sesuai `.gitignore`).
+
+Setelah `tool/config.env` diisi `PAGE_ID`, `PAGE_ACCESS_TOKEN`, dan opsional `PEXELS_API_KEY`, jalankan:
+
+```bash
+bash ~/fb-us-money/tool/set_secrets.sh
+```
+
+Lalu publish lewat **Actions → Run workflow → reel: all → centang publish**.
