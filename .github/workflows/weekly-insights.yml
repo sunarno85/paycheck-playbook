@@ -1,0 +1,35 @@
+name: Weekly insights
+
+on:
+  schedule:
+    # Senin 08:00 UTC = 15:00 WIB
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  insights:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Tarik Insights & draf balasan
+        env:
+          PAGE_ID: ${{ secrets.PAGE_ID }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+        run: python tool/weekly_insights.py
+      - name: Simpan ke repo
+        run: |
+          git config user.name "paycheck-playbook-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add 04_TRACKER.csv tool/replies_pending.md
+          if ! git diff --cached --quiet; then
+            git commit -m "Weekly insights auto"
+            git push
+          else
+            echo "Tidak ada perubahan."
+          fi
