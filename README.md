@@ -42,22 +42,22 @@ Baca `tool/README.md` dan `tool/GET_TOKEN.md` untuk token Page & kunci Pexels. `
 
 ## Status saat ini
 
-Repo GitHub sudah dibuat: **https://github.com/sunarno85/paycheck-playbook** (23 file ter-upload, `config.env` sengaja tidak ikut).
+- Repo: **https://github.com/sunarno85/paycheck-playbook** (`config.env` sengaja tidak ikut).
+- Page: **Paycheck Playbook** / `@paycheckplaybookus` — aktif.
+- **12 Reels sudah tayang** memakai footage stok asli (Pixabay), caption + hashtag lengkap. Versi lama ber-background solid sudah dihapus.
+- Token Page, `PAGE_ID`, dan API key tersimpan lokal di `tool/config.env` (`600`) dan GitHub Secrets.
+- Workflow build + publish sudah aktif di tab **Actions**.
 
-File workflow `.github/workflows/build-reels.yml` belum bisa dikirim karena PAT hanya punya scope `repo`. GitHub mensyaratkan scope `workflow` untuk file di folder tersebut. Setelah scope `workflow` dicentang di https://github.com/settings/tokens, jalankan:
-
-```bash
-bash ~/fb-us-money/tool/finish_setup.sh
-```
-
-Skrip itu mengirim workflow, lalu menjalankan uji build `R1` dengan `publish=false`. Hasilnya di tab **Actions** repo.
-
-Status lanjutan: uji `R1` **sukses** (bug mapping audio ffmpeg sudah diperbaiki), lalu build **`all` sukses** menghasilkan 12 MP4 + 12 paket caption di `output/`. File tidak masuk git (sesuai `.gitignore`).
-
-Setelah `tool/config.env` diisi `PAGE_ID`, `PAGE_ACCESS_TOKEN`, dan opsional `PEXELS_API_KEY`, jalankan:
+### Perintah penting
 
 ```bash
-bash ~/fb-us-money/tool/set_secrets.sh
+bash ~/fb-us-money/tool/set_secrets.sh                       # sinkronkan config.env -> GitHub Secrets
+bash ~/fb-us-money/tool/publish_all.sh                       # build + publish semua Reels
+bash ~/fb-us-money/tool/publish_from_dir.sh /path/ke/output   # publish dari artifact tanpa rebuild
 ```
 
-Lalu publish lewat **Actions → Run workflow → reel: all → centang publish**.
+### Berikutnya
+
+- Isi `04_TRACKER.csv` dari Insights tiap 3 hari, lalu kirim screenshot ke saya untuk analisis.
+- Cek menu **Monetization** di Page setelah follower bertumbuh.
+- Matikan **Wireless Debugging** di HP (ADB sudah tidak dipakai).
