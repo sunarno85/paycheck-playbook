@@ -1,0 +1,8 @@
+# Rahasia & hasil lokal — jangan pernah masuk repo
+tool/config.env
+.github_token
+*.mp4
+output/
+assets/_tmp/
+__pycache__/
+*.pyc

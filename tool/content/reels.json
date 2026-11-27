@@ -1,0 +1,98 @@
+{
+  "R1": {
+    "id": "R1",
+    "title": "The 50/30/20 rule",
+    "vo": "Here's the simplest budget in America: the 50/30/20 rule. Take your take-home pay. Fifty percent goes to needs — rent, groceries, utilities, minimum debt payments. Thirty percent goes to wants — eating out, subscriptions, fun. Twenty percent goes to your future — savings, investing, extra debt payoff. That's it. If 50% barely covers your needs, don't quit — shrink the gap first, then work toward the split. Save this for payday. For educational purposes only. Not financial advice.",
+    "overlays": ["Your paycheck, split in 3. Save this.", "50% NEEDS", "30% WANTS", "20% FUTURE", "Save this for payday"],
+    "stock_queries": ["counting cash", "grocery shopping", "budget spreadsheet"],
+    "caption": "Your paycheck, split in 3. Save this.\n\n50% needs, 30% wants, 20% future — the simplest budget rule in America.\n\nSave this before payday. Which part is hardest for you?\n\nFor educational purposes only. Not financial advice.\n\n#PersonalFinance #Budgeting #MoneyTips #USMoney #Paycheck"
+  },
+  "R2": {
+    "id": "R2",
+    "title": "Waive a bank fee",
+    "vo": "If your bank or credit card charged you a late fee, try this. Call the number on the back of your card and say: 'I've been a customer for two years, this is my first late fee — can you waive it as a courtesy?' Keep your tone calm. Most representatives can waive one fee per year, but they won't offer unless you ask. Do this once, not every month. And never miss a payment on purpose. Comment SCRIPT and I'll send you my exact wording. For educational purposes only. Not financial advice.",
+    "overlays": ["I got a $95 fee removed with one sentence.", "Can you waive it as a courtesy?", "Comment SCRIPT"],
+    "stock_queries": ["phone call close up", "credit card on table", "bank app on phone"],
+    "caption": "One calm sentence can erase a fee. Comment SCRIPT and I'll send you my exact 3-line wording.\n\nFor educational purposes only. Not financial advice.\n\n#PersonalFinance #CreditCardTips #MoneyTips #USMoney #Budgeting"
+  },
+  "R3": {
+    "id": "R3",
+    "title": "Credit utilization timing",
+    "vo": "Credit utilization is about 30% of your FICO score. Here's the part most people miss: card companies report your balance on your statement date, not your due date. So if you spend nine hundred on a thousand-dollar limit and pay it off before the due date, it can still look like you owe ninety percent. The fix: pay most of the balance BEFORE the statement closes, then pay the rest by the due date. Aim under 30% — under 10% is even better. Check your statement date in your app. For educational purposes only. Not financial advice.",
+    "overlays": ["Statement date is NOT the due date", "Target: under 30%", "Under 10% = better"],
+    "stock_queries": ["credit card swiping", "phone banking app", "calendar page"],
+    "caption": "This one detail can move your score. Save it before your statement closes.\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditUtilization #PersonalFinance #MoneyTips #USMoney"
+  },
+  "R4": {
+    "id": "R4",
+    "title": "Emergency fund ladder",
+    "vo": "Don't let anyone tell you that you need six months of savings before you start. Start with a starter fund: one thousand dollars. That covers a flat tire or a surprise copay. Then build one month of essential expenses — rent, food, utilities, insurance. Only after that, go for three to six months. Keep it in a high-yield savings account, not your checking account, so it's there when you need it but not easy to spend. Comment your number — where are you right now? For educational purposes only. Not financial advice.",
+    "overlays": ["How much is enough?", "Step 1: $1,000", "Step 2: 1 month", "Step 3: 3-6 months"],
+    "stock_queries": ["piggy bank", "pharmacy bill", "savings app on phone"],
+    "caption": "Where are you on the emergency fund ladder?\n\nFor educational purposes only. Not financial advice.\n\n#EmergencyFund #PersonalFinance #SavingMoney #Budgeting #USMoney"
+  },
+  "R5": {
+    "id": "R5",
+    "title": "401k match",
+    "vo": "If your employer offers a 401k match and you're not taking it, you're leaving part of your salary behind. A common match is fifty cents on the dollar up to six percent of your pay. Contribute at least enough to get the full match before you invest anywhere else. Then increase by one percent every raise — you'll barely feel it. Two things to know: vesting schedules can be different, and the market goes up and down. For educational purposes only. Not financial advice.",
+    "overlays": ["Employer match = part of your pay", "Get the full match first", "Plus 1% every raise"],
+    "stock_queries": ["office desk", "computer screen with charts", "coffee break"],
+    "caption": "Check your plan today — some matches vest over time. Share this with a coworker who is missing out.\n\nFor educational purposes only. Not financial advice.\n\n#401k #PersonalFinance #InvestingBasics #USMoney"
+  },
+  "R6": {
+    "id": "R6",
+    "title": "Subscription audit",
+    "vo": "Open your phone settings, then subscriptions. Most people find at least three charges they don't use. Cancel anything you haven't opened in thirty days. Then keep a pause list — services you might want later, like after a free trial. Do this audit on the first of every month and it takes two minutes. Two minutes, maybe forty dollars a month back. For educational purposes only. Not financial advice.",
+    "overlays": ["Settings then Subscriptions", "Cancel if unused in 30 days", "$40/month back?"],
+    "stock_queries": ["scrolling phone", "phone settings screen", "monthly calendar"],
+    "caption": "Do the 2-minute audit tonight. How much did you find?\n\nFor educational purposes only. Not financial advice.\n\n#Budgeting #PersonalFinance #MoneyTips #Subscriptions #USMoney"
+  },
+  "R7": {
+    "id": "R7",
+    "title": "Snowball vs avalanche",
+    "vo": "Two ways to attack debt. Snowball: pay the smallest balance first — you get quick wins and stay motivated. Avalanche: pay the highest interest rate first — you pay less total interest. Mathematically, avalanche wins. Psychologically, snowball keeps people going. The best method is the one you won't quit. If you're disciplined, go avalanche. If you need momentum, go snowball. Either way, keep minimum payments on everything else. For educational purposes only. Not financial advice.",
+    "overlays": ["SNOWBALL = smallest first", "AVALANCHE = highest APR first", "Best = the one you finish"],
+    "stock_queries": ["stack of bills", "paying bills at table", "calculator"],
+    "caption": "Snowball or avalanche — which are you using?\n\nFor educational purposes only. Not financial advice.\n\n#DebtPayoff #PersonalFinance #MoneyTips #USMoney"
+  },
+  "R8": {
+    "id": "R8",
+    "title": "26-week savings challenge",
+    "vo": "Here's a savings challenge that doesn't feel crazy. Twenty-six weeks, fifty dollars a week. That's one thousand three hundred dollars — before any interest. Put it in a separate high-yield savings account and automate the transfer on payday. If fifty is too much, start at twenty-five and you still get six hundred fifty. The trick isn't the amount. It's that you never see the money. For educational purposes only. Not financial advice.",
+    "overlays": ["26 x $50 = $1,300", "Automate on payday", "Out of sight, out of spend"],
+    "stock_queries": ["money jar", "bank app transfer", "piggy bank"],
+    "caption": "$50 a week for 26 weeks = $1,300. Save this challenge.\n\nFor educational purposes only. Not financial advice.\n\n#SavingsChallenge #SavingMoney #PersonalFinance #USMoney"
+  },
+  "R9": {
+    "id": "R9",
+    "title": "Why your score dropped",
+    "vo": "Three reasons your credit score can drop even when you pay on time. One: your balance went up before your statement closed. Two: you opened a new card — the hard inquiry and lower average age can hurt for a while. Three: a collections account showed up, sometimes from a medical bill you didn't know about. Pull your free reports, dispute anything wrong, and don't panic over a few points. For educational purposes only. Not financial advice.",
+    "overlays": ["1. Balance went up", "2. New hard inquiry", "3. Collections", "Dispute errors"],
+    "stock_queries": ["credit score graph", "envelope with mail", "computer dispute form"],
+    "caption": "Check your reports — errors are more common than you think.\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditRepair #PersonalFinance #USMoney"
+  },
+  "R10": {
+    "id": "R10",
+    "title": "The latte myth",
+    "vo": "You've heard: skip the latte and you'll be rich. Here's the truth. Cutting a five-dollar coffee every day saves about eighteen hundred a year — good, but it won't fix a four-thousand-dollar rent gap. Big wins come from the big three: housing, transportation, and insurance. Refinance the car, shop insurance quotes, get a roommate. Then enjoy the coffee. Small cuts help, but focus where the money actually goes. For educational purposes only. Not financial advice.",
+    "overlays": ["Coffee = $1,800/year", "Rent + car + insurance = thousands", "Fix the big 3 first"],
+    "stock_queries": ["coffee cup", "apartment building", "car keys"],
+    "caption": "Agree or disagree? Save this before your next budget.\n\nFor educational purposes only. Not financial advice.\n\n#Budgeting #PersonalFinance #MoneyMyths #USMoney"
+  },
+  "R11": {
+    "id": "R11",
+    "title": "Sinking funds",
+    "vo": "A sinking fund is just a savings bucket for a known expense. Christmas, car repairs, annual insurance, school supplies — you know they're coming, so stop acting surprised. Pick four categories, divide the yearly cost by twelve, and move that amount every payday. When the bill hits, you pay from the bucket, not from your groceries. No credit card, no panic. For educational purposes only. Not financial advice.",
+    "overlays": ["Known expense / 12 = monthly", "4 buckets to start", "No surprise bills"],
+    "stock_queries": ["labeled jars", "gift boxes", "car repair"],
+    "caption": "Which sinking fund would you set up first? Save this.\n\nFor educational purposes only. Not financial advice.\n\n#Budgeting #SinkingFunds #PersonalFinance #USMoney"
+  },
+  "R12": {
+    "id": "R12",
+    "title": "The BNPL trap",
+    "vo": "Buy now, pay later feels harmless — four payments, no interest. But here's what people miss: it's easy to stack several orders and lose track, late fees add up fast, and some lenders report to credit bureaus. Also, you're spending money you haven't earned yet. Rule of thumb: if you can't pay it in full today, you probably can't afford it in four chunks. For educational purposes only. Not financial advice.",
+    "overlays": ["4 payments is NOT free", "Stacking orders = trap", "Can't pay today? Wait."],
+    "stock_queries": ["online shopping cart", "phone checkout", "package delivery"],
+    "caption": "Have you used BNPL? Share this with someone who uses it every week.\n\nFor educational purposes only. Not financial advice.\n\n#BNPL #Debt #PersonalFinance #USMoney"
+  }
+}
