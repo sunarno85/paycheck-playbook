@@ -210,7 +210,7 @@ def render(cfg, reel, audio, clips, out):
     for clip in clips:
         cmd += ["-i", str(clip)]
     cmd += ["-i", str(audio), "-filter_complex", graph,
-            "-map", f"[{last}]", "-map", f"[{len(clips)}:a]", "-shortest",
+            "-map", f"[{last}]", "-map", f"{len(clips)}:a", "-shortest",
             "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
             "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k",
             "-movflags", "+faststart", str(out)]
@@ -224,7 +224,7 @@ def render(cfg, reel, audio, clips, out):
         for clip in clips:
             cmd += ["-i", str(clip)]
         cmd += ["-i", str(audio), "-filter_complex", graph,
-                "-map", f"[{last}]", "-map", f"[{len(clips)}:a]", "-shortest",
+                "-map", f"[{last}]", "-map", f"{len(clips)}:a", "-shortest",
                 "-c:v", "libx264", "-preset", "veryfast", "-crf", "24",
                 "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "128k", str(out)]
         r = run(cmd)
@@ -279,7 +279,7 @@ def api_post(url, fields):
 def publish(cfg, reel, video, yes=False):
     if cfg.get("DRY_RUN", "1") == "1" and not yes:
         log("DRY_RUN aktif — tidak memposting. Tambahkan --yes untuk publish.")
-        return False
+        return True
     page, token = cfg.get("PAGE_ID", ""), cfg.get("PAGE_ACCESS_TOKEN", "")
     if not page or not token:
         log("ERROR: PAGE_ID / PAGE_ACCESS_TOKEN kosong. Lihat tool/GET_TOKEN.md")
@@ -339,10 +339,12 @@ def main():
         ids = [a for a in args[1:] if not a.startswith("--")]
         if not ids or ids == ["all"]:
             ids = list(content.keys())
+        failed = False
         for rid in ids:
             reel = content.get(rid)
             if not reel:
                 log(f"ERROR: {rid} tidak ditemukan")
+                failed = True
                 continue
             if cmd == "pack":
                 write_pack(cfg, reel, cfg["OUT"] / f"{rid}.mp4")
@@ -351,14 +353,20 @@ def main():
             if cmd == "publish":
                 if not video.exists():
                     log(f"ERROR: {video} belum ada. Jalankan build dulu.")
+                    failed = True
                     continue
-                publish(cfg, reel, video, yes="--yes" in args)
+                if not publish(cfg, reel, video, yes="--yes" in args):
+                    failed = True
                 continue
             audio = TMP / f"{rid}_vo.mp3"
             tts(cfg, reel, audio)
             clips = fetch_clips(cfg, reel, TMP)
-            render(cfg, reel, audio, clips, video)
+            if not render(cfg, reel, audio, clips, video):
+                failed = True
+                continue
             write_pack(cfg, reel, video)
+        if failed:
+            sys.exit(1)
         return
 
     log(f"perintah tidak dikenal: {cmd}")

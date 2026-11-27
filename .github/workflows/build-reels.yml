@@ -58,6 +58,7 @@ jobs:
         run: python tool/factory.py build ${{ inputs.reel }}
 
       - name: Publish (jika diminta)
+        if: ${{ inputs.publish }}
         run: python tool/factory.py publish ${{ inputs.reel }} --yes
 
       - name: Simpan hasil
