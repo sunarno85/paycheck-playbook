@@ -31,6 +31,7 @@ DEFAULTS = {
     "PAGE_ID": "",
     "PAGE_ACCESS_TOKEN": "",
     "PEXELS_API_KEY": "",
+    "PIXABAY_API_KEY": "",
     "VOICE": "en-US-AndrewNeural",
     "FONT": "/system/fonts/Roboto-Bold.ttf",
     "OUT_DIR": str(ROOT / "output"),
@@ -129,7 +130,6 @@ def tts(cfg, reel, path):
 def fetch_clips(cfg, reel, outdir):
     need("ffmpeg", fatal=True)
     paths = []
-    key = cfg.get("PEXELS_API_KEY", "")
     for i, query in enumerate(reel["stock_queries"][:3]):
         dest = outdir / f"{reel['id']}_clip_{i}.mp4"
         if dest.exists() and dest.stat().st_size > 10000:
@@ -137,12 +137,14 @@ def fetch_clips(cfg, reel, outdir):
             continue
         ok = False
         link = None
-        if key:
-            try:
+        pkey = cfg.get("PEXELS_API_KEY", "")
+        bkey = cfg.get("PIXABAY_API_KEY", "")
+        try:
+            if pkey:
                 url = "https://api.pexels.com/videos/search?" + urllib.parse.urlencode(
                     {"query": query, "per_page": 5, "orientation": "portrait"})
                 req = urllib.request.Request(
-                    url, headers={"Authorization": key, "User-Agent": "Mozilla/5.0"})
+                    url, headers={"Authorization": pkey, "User-Agent": "Mozilla/5.0"})
                 with urllib.request.urlopen(req, timeout=30) as resp:
                     data = json.load(resp)
                 for video in data.get("videos", []):
@@ -152,15 +154,25 @@ def fetch_clips(cfg, reel, outdir):
                             break
                     if link:
                         break
-                if link:
-                    req2 = urllib.request.Request(link, headers={"User-Agent": "Mozilla/5.0"})
-                    with urllib.request.urlopen(req2, timeout=90) as resp, open(dest, "wb") as fh:
-                        shutil.copyfileobj(resp, fh)
-                    ok = dest.stat().st_size > 10000
-            except Exception as exc:
-                log(f"stok '{query}' gagal: {exc}")
+            elif bkey:
+                url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
+                    {"key": bkey, "q": query, "per_page": 5, "safesearch": "true"})
+                with urllib.request.urlopen(url, timeout=30) as resp:
+                    data = json.load(resp)
+                for hit in data.get("hits", []):
+                    vids = hit.get("videos", {})
+                    link = (vids.get("medium") or vids.get("small") or {}).get("url")
+                    if link:
+                        break
+            if link:
+                req2 = urllib.request.Request(link, headers={"User-Agent": "Mozilla/5.0"})
+                with urllib.request.urlopen(req2, timeout=90) as resp, open(dest, "wb") as fh:
+                    shutil.copyfileobj(resp, fh)
+                ok = dest.stat().st_size > 10000
+        except Exception as exc:
+            log(f"stok '{query}' gagal: {exc}")
         if not ok:
-            log(f"fallback warna solid untuk '{query}' (isi PEXELS_API_KEY untuk stok asli)")
+            log(f"fallback warna solid untuk '{query}' (isi PEXELS_API_KEY/PIXABAY_API_KEY untuk stok asli)")
             run(["ffmpeg", "-y", "-f", "lavfi",
                  "-i", "color=c=0x0F3D3E:s=1080x1920:d=12",
                  "-c:v", "libx264", "-pix_fmt", "yuv420p", str(dest)])
@@ -339,7 +351,8 @@ def main():
         log(f"ffmpeg: {need('ffmpeg') or 'MISSING'}")
         log(f"edge-tts: {need('edge-tts') or 'MISSING'}")
         log(f"font: {find_font(cfg) or 'MISSING'}")
-        log(f"Pexels API key: {'ada' if cfg['PEXELS_API_KEY'] else 'kosong (fallback warna)'}")
+        log(f"Pexels API key: {'ada' if cfg['PEXELS_API_KEY'] else 'kosong'}")
+        log(f"Pixabay API key: {'ada' if cfg['PIXABAY_API_KEY'] else 'kosong (fallback warna)'}")
         log(f"Page token: {'ada' if cfg['PAGE_ACCESS_TOKEN'] else 'kosong'}")
         log(f"Output: {cfg['OUT']}")
         return

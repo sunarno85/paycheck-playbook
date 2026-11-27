@@ -37,6 +37,7 @@ jobs:
           PAGE_ID: ${{ secrets.PAGE_ID }}
           PAGE_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
           PEXELS_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_KEY: ${{ secrets.PIXABAY_API_KEY }}
           DO_PUBLISH: ${{ inputs.publish }}
         run: |
           mkdir -p output assets/_tmp
@@ -45,6 +46,7 @@ jobs:
           PAGE_ID=$PAGE_ID
           PAGE_ACCESS_TOKEN=$PAGE_TOKEN
           PEXELS_API_KEY=$PEXELS_KEY
+          PIXABAY_API_KEY=$PIXABAY_KEY
           VOICE=en-US-AndrewNeural
           FONT=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
           OUT_DIR=$GITHUB_WORKSPACE/output

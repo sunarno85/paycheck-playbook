@@ -14,7 +14,7 @@ set -a
 source "$ROOT/tool/config.env"
 set +a
 
-for KEY in PEXELS_API_KEY PAGE_ID PAGE_ACCESS_TOKEN; do
+for KEY in PEXELS_API_KEY PIXABAY_API_KEY PAGE_ID PAGE_ACCESS_TOKEN; do
   VALUE="${!KEY:-}"
   if [ -n "$VALUE" ]; then
     gh secret set "$KEY" --repo "$REPO" --body "$VALUE"
