@@ -39,3 +39,15 @@ Baca `tool/README.md` dan `tool/GET_TOKEN.md` untuk token Page & kunci Pexels. `
 - **Kamu:** buat Page, isi `config.env` (token & API key), jalankan tool, kirim screenshot Insights tiap 3 hari.
 
 ⚠️ Jangan pernah kirim password **atau token** Facebook/email ke saya. Token tersimpan lokal di `config.env` perangkatmu.
+
+## Status saat ini
+
+Repo GitHub sudah dibuat: **https://github.com/sunarno85/paycheck-playbook** (23 file ter-upload, `config.env` sengaja tidak ikut).
+
+File workflow `.github/workflows/build-reels.yml` belum bisa dikirim karena PAT hanya punya scope `repo`. GitHub mensyaratkan scope `workflow` untuk file di folder tersebut. Setelah scope `workflow` dicentang di https://github.com/settings/tokens, jalankan:
+
+```bash
+bash ~/fb-us-money/tool/finish_setup.sh
+```
+
+Skrip itu mengirim workflow, lalu menjalankan uji build `R1` dengan `publish=false`. Hasilnya di tab **Actions** repo.
