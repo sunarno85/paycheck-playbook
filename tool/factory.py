@@ -155,13 +155,19 @@ def fetch_clips(cfg, reel, outdir):
                     if link:
                         break
             elif bkey:
-                url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
-                    {"key": bkey, "q": query, "per_page": 5, "safesearch": "true"})
-                with urllib.request.urlopen(url, timeout=30) as resp:
-                    data = json.load(resp)
-                for hit in data.get("hits", []):
-                    vids = hit.get("videos", {})
-                    link = (vids.get("medium") or vids.get("small") or {}).get("url")
+                # Pixabay menolak User-Agent bawaan Python (403), jadi pakai UA browser.
+                # Kalau query spesifik kosong, cari kata kunci umum yang pasti ada.
+                for q in (query, "money", "finance"):
+                    url = "https://pixabay.com/api/videos/?" + urllib.parse.urlencode(
+                        {"key": bkey, "q": q, "per_page": 5, "safesearch": "true"})
+                    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+                    with urllib.request.urlopen(req, timeout=30) as resp:
+                        data = json.load(resp)
+                    for hit in data.get("hits", []):
+                        vids = hit.get("videos", {})
+                        link = (vids.get("medium") or vids.get("small") or {}).get("url")
+                        if link:
+                            break
                     if link:
                         break
             if link:
