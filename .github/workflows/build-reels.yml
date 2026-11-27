@@ -1,0 +1,70 @@
+name: Build Paycheck Playbook Reels
+
+on:
+  workflow_dispatch:
+    inputs:
+      reel:
+        description: "Kode reel (R1..R12) atau all"
+        required: true
+        default: "all"
+      publish:
+        description: "Publish ke Facebook?"
+        type: boolean
+        default: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg & font
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+
+      - name: Install edge-tts
+        run: pip install -r tool/requirements.txt
+
+      - name: Tulis config dari secrets
+        env:
+          PAGE_ID: ${{ secrets.PAGE_ID }}
+          PAGE_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          PEXELS_KEY: ${{ secrets.PEXELS_API_KEY }}
+          DO_PUBLISH: ${{ inputs.publish }}
+        run: |
+          mkdir -p output assets/_tmp
+          if [ "$DO_PUBLISH" = "true" ]; then DRY=0; else DRY=1; fi
+          cat > tool/config.env <<EOF
+          PAGE_ID=$PAGE_ID
+          PAGE_ACCESS_TOKEN=$PAGE_TOKEN
+          PEXELS_API_KEY=$PEXELS_KEY
+          VOICE=en-US-AndrewNeural
+          FONT=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+          OUT_DIR=$GITHUB_WORKSPACE/output
+          DRY_RUN=$DRY
+          EOF
+
+      - name: Cek lingkungan
+        run: python tool/factory.py check
+
+      - name: Build video
+        run: python tool/factory.py build ${{ inputs.reel }}
+
+      - name: Publish (jika diminta)
+        run: python tool/factory.py publish ${{ inputs.reel }} --yes
+
+      - name: Simpan hasil
+        uses: actions/upload-artifact@v4
+        with:
+          name: reels-${{ inputs.reel }}
+          path: |
+            output/*.mp4
+            output/*_paket.md
+          if-no-files-found: warn
