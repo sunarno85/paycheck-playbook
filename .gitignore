@@ -7,3 +7,4 @@ assets/_tmp/
 __pycache__/
 *.pyc
 *.log
+assets/*.png
