@@ -288,12 +288,21 @@ def publish(cfg, reel, video, yes=False):
     start = api_post(base, {"upload_phase": "start", "access_token": token})
     vid, upload_url = start.get("video_id"), start.get("upload_url")
     if vid and upload_url:
+        # rupload.facebook.com memakai upload resumable: raw body + header Offset/X-Entity-Length.
+        upload_url = str(upload_url).replace("\\/", "/")
+        size = Path(video).stat().st_size
         r = run(["curl", "-sS", "-X", "POST",
-                 "-F", "upload_phase=transfer",
-                 "-F", f"video_file=@{video}",
-                 "-F", f"access_token={token}", upload_url])
-        if r.returncode != 0:
-            log(f"upload gagal: {r.stderr}")
+                 "-H", f"Authorization: OAuth {token}",
+                 "-H", "Offset: 0",
+                 "-H", f"X-Entity-Length: {size}",
+                 "-H", "Content-Type: application/octet-stream",
+                 "--data-binary", f"@{video}", upload_url])
+        try:
+            up = json.loads(r.stdout or "{}")
+        except json.JSONDecodeError:
+            up = {}
+        if r.returncode != 0 or not up.get("success"):
+            log(f"upload gagal: {(r.stdout or r.stderr or '')[:300]}")
             return False
         result = api_post(base, {
             "upload_phase": "finish",
