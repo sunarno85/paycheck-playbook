@@ -323,7 +323,7 @@ def publish(cfg, reel, video, yes=False):
         except json.JSONDecodeError:
             result = {"raw": r.stdout}
     log(f"hasil publish: {json.dumps(result, ensure_ascii=False)[:500]}")
-    return "id" in result or "video_id" in result
+    return any(k in result for k in ("id", "video_id", "post_id")) and "error" not in result
 
 
 def main():
