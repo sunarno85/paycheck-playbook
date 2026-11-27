@@ -8,7 +8,7 @@ TOKEN_FILE="$HOME/token_github"
 TOKEN=$(tr -d '\r\n' < "$TOKEN_FILE")
 
 SCOPES=$(curl -sS -D - -o /dev/null -H "Authorization: Bearer $TOKEN" \
-  https://api.github.com/user | tr -d '\r' | sed -n 's/^x-oauth-scopes: *//Ip')
+  https://api.github.com/user | tr -d '\r' | sed -n 's/^x-oauth-scopes: *//Ip' | tr -d ' ')
 case ",$SCOPES," in
   *,workflow,*) ;;
   *)
