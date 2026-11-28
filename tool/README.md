@@ -7,8 +7,15 @@ Mesin untuk membuat dan (opsional) mempublish Reels "Paycheck Playbook".
 ## Alur kerja
 
 ```
-reels.json → edge-tts (voice-over) → Pexels (stok video) → ffmpeg (render 9:16 + teks) → MP4 + paket unggahan → Graph API (opsional)
+reels.json → edge-tts (voice-over) → Pixabay (stok video) → ffmpeg (render 9:16 + teks) → MP4 + paket unggahan → Graph API (opsional)
 ```
+
+### Aturan render anti-terpotong
+
+- Klip portrait 9:16 dipakai apa adanya; klip landscape/square **tidak di-crop** — ditaruh utuh di atas background blur.
+- Teks overlay dibungkus maks. 3 baris, font 52–62 px, margin 45 px, dan ditempatkan di safe area atas area tombol Facebook.
+- Setiap segmen video dipaksa pas sesuai durasi audio (tidak ada audio yang terputus).
+- Setelah render, `factory.py` memvalidasi resolusi **1080x1920** dan kesamaan durasi video/audio.
 
 ## Setup sekali
 
