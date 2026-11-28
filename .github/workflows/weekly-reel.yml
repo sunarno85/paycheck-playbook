@@ -1,0 +1,103 @@
+name: Weekly reel
+
+on:
+  schedule:
+    # Senin 09:00 UTC = 16:00 WIB, setelah insights & penjadwalan teks
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install ffmpeg & font
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg fonts-dejavu-core
+
+      - name: Install edge-tts
+        run: pip install -r tool/requirements.txt
+
+      - name: Tentukan Reel berikutnya
+        id: next
+        run: |
+          CODE=$(python - <<'PY'
+          import json, pathlib
+          state = json.loads(pathlib.Path('tool/content/reel_state.json').read_text())
+          scripts = json.loads(pathlib.Path('tool/content/reels.json').read_text())
+          nxt = 'R' + str(int(state['last'][1:]) + 1)
+          print(nxt if nxt in scripts else '')
+          PY
+          )
+          echo "code=$CODE" >> "$GITHUB_OUTPUT"
+          if [ -n "$CODE" ]; then echo "Reel berikutnya: $CODE"; else echo "Skrip habis — dilewati."; fi
+
+      - name: Tulis config dari secrets
+        if: steps.next.outputs.code != ''
+        env:
+          PAGE_ID: ${{ secrets.PAGE_ID }}
+          PAGE_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+          PEXELS_KEY: ${{ secrets.PEXELS_API_KEY }}
+          PIXABAY_KEY: ${{ secrets.PIXABAY_API_KEY }}
+        run: |
+          mkdir -p output assets/_tmp
+          cat > tool/config.env <<EOF
+          PAGE_ID=$PAGE_ID
+          PAGE_ACCESS_TOKEN=$PAGE_TOKEN
+          PEXELS_API_KEY=$PEXELS_KEY
+          PIXABAY_API_KEY=$PIXABAY_KEY
+          VOICE=en-US-AndrewNeural
+          FONT=/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf
+          OUT_DIR=$GITHUB_WORKSPACE/output
+          DRY_RUN=0
+          EOF
+
+      - name: Cek lingkungan
+        if: steps.next.outputs.code != ''
+        run: python tool/factory.py check
+
+      - name: Build Reel
+        if: steps.next.outputs.code != ''
+        run: python tool/factory.py build ${{ steps.next.outputs.code }}
+
+      - name: Publish Reel
+        if: steps.next.outputs.code != ''
+        run: python tool/factory.py publish ${{ steps.next.outputs.code }} --yes
+
+      - name: Simpan state
+        if: steps.next.outputs.code != ''
+        env:
+          CODE: ${{ steps.next.outputs.code }}
+        run: |
+          python - "$CODE" <<'PY'
+          import json, pathlib, sys
+          p = pathlib.Path('tool/content/reel_state.json')
+          d = json.loads(p.read_text())
+          d['last'] = sys.argv[1]
+          p.write_text(json.dumps(d, indent=2) + '\n')
+          PY
+          git config user.name "paycheck-playbook-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add tool/content/reel_state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Weekly reel: $CODE"
+            git push
+          fi
+
+      - name: Simpan video
+        if: steps.next.outputs.code != ''
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel-${{ steps.next.outputs.code }}
+          path: |
+            output/*.mp4
+            output/*_paket.md
+          if-no-files-found: warn

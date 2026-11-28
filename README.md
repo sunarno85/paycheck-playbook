@@ -70,7 +70,8 @@ Postingan dikirim oleh Facebook lewat `scheduled_publish_time` — HP tidak perl
 
 - `weekly-insights.yml` — Senin 08:00 UTC: tarik Insights, isi `04_TRACKER.csv`, buat draf balasan.
 - `auto-schedule.yml` — Senin 08:30 UTC: jadwalkan 7 konten berikutnya dari `content/bank.json`.
-- Bank berisi **59 konten** (± 8 minggu ke depan). Facebook yang mengirim post pada jamnya — HP tidak perlu menyala.
+- `weekly-reel.yml` — Senin 09:00 UTC: build + publish 1 Reel baru dari `tool/content/reels.json` (stok Pixabay, voice-over, tanpa fallback warna).
+- Bank berisi **135 konten teks** (± 19 minggu) dan **8 skrip Reel** baru (R13–R20). Facebook yang mengirim post pada jamnya — HP tidak perlu menyala.
 
 ### Yang masih butuh kamu (tidak bisa lewat API)
 
