@@ -3,57 +3,57 @@
     "id": "B08",
     "title": "Paycheck day order",
     "message": "The order you handle payday matters more than the amount.\n\n1. Pay yourself first (even $10).\n2. Cover needs.\n3. Cover minimum debt payments.\n4. Wants come last.\n\nSave this before your next deposit. 👇 What do you do first?\n\nFor educational purposes only. Not financial advice.\n\n#Payday #Budgeting #MoneyTips #USMoney #Paycheck",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-05T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881571566006"
   },
   {
     "id": "B09",
     "title": "First $500 buffer",
     "message": "Before you invest a single dollar, build a starter buffer of $500.\n\nIt's not an emergency fund yet — it's a shock absorber. Flat tire, small medical bill, late paycheck.\n\nKeep it in a separate savings account so you don't spend it by accident.\n\nSave this. 👇 How close are you to your first $500?\n\nFor educational purposes only. Not financial advice.\n\n#EmergencyFund #SavingMoney #PersonalFinance #USMoney",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-06T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881649566006"
   },
   {
     "id": "B10",
     "title": "Check your credit report",
     "message": "You get one free credit report per year from each bureau. Use it.\n\nLook for:\n• accounts you don't recognize\n• wrong balances\n• late payments that aren't yours\n\nDispute errors in writing. Keep copies of everything.\n\nSave this reminder. 👇 When did you last check yours?\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditReport #PersonalFinance #USMoney",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-07T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881727566006"
   },
   {
     "id": "B11",
     "title": "401(k) match basics",
     "message": "If your employer matches contributions, that's part of your compensation.\n\nCommon rule: contribute at least enough to get the full match before anything else.\n\nCheck two things today:\n• your match percentage\n• your vesting schedule\n\nSave this before you change your contributions. 👇\n\nFor educational purposes only. Not financial advice.\n\n#401k #Retirement #PersonalFinance #USMoney #Paycheck",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-08T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881757566006"
   },
   {
     "id": "B12",
     "title": "Snowball vs avalanche",
     "message": "Two ways to pay off debt:\n\nSnowball: smallest balance first. Fast wins, more motivation.\nAvalanche: highest interest first. Less total interest paid.\n\nThe best method is the one you'll actually stick with.\n\nSave this. 👇 Which one are you using?\n\nFor educational purposes only. Not financial advice.\n\n#DebtPayoff #PersonalFinance #MoneyTips #USMoney",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-09T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881787566006"
   },
   {
     "id": "B13",
     "title": "Why your score dipped",
     "message": "Your score can drop even when you did nothing 'wrong'.\n\nCommon reasons:\n• a card's reported balance went up\n• a new account lowered your average age\n• a hard inquiry\n• an old account aged off\n\nCheck the report before you panic. 👇 Save this.\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditUtilization #PersonalFinance #USMoney",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-10T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881823566006"
   },
   {
     "id": "B14",
     "title": "Stop blaming your coffee",
     "message": "Cutting coffee won't fix a budget built on rent and debt.\n\nThe latte factor is real but small. The big levers are:\n• housing\n• transport\n• recurring bills\n• interest rates\n\nAudit the big four first. The small stuff comes later.\n\nSave this. 👇 What's your biggest line item?\n\nFor educational purposes only. Not financial advice.\n\n#Budgeting #MoneyTips #PersonalFinance #USMoney",
-    "used": false,
-    "scheduled_at": null,
-    "post_id": null
+    "used": true,
+    "scheduled_at": "2026-12-11T12:15:00-05:00",
+    "post_id": "1541228159063639_122097881859566006"
   },
   {
     "id": "B15",
