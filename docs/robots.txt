@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sunarno85.github.io/paycheck-playbook/sitemap.xml

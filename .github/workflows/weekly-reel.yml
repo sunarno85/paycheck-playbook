@@ -2,8 +2,8 @@ name: Weekly reel
 
 on:
   schedule:
-    # Senin 09:00 UTC = 16:00 WIB, setelah insights & penjadwalan teks
-    - cron: '0 9 * * 1'
+    # Senin & Kamis 09:00 UTC = 16:00 WIB, setelah insights & penjadwalan teks
+    - cron: '0 9 * * 1,4'
   workflow_dispatch:
 
 permissions:
