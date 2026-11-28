@@ -3,6 +3,7 @@
 import csv
 import json
 import mimetypes
+import os
 import subprocess
 import sys
 import time
@@ -27,8 +28,8 @@ if CFG_FILE.exists():
         if "=" in line and not line.startswith("#"):
             k, v = line.split("=", 1)
             cfg[k.strip()] = v.strip().strip('"').strip("'")
-PAGE = cfg.get("PAGE_ID", "")
-TOKEN = cfg.get("PAGE_ACCESS_TOKEN", "")
+PAGE = os.environ.get("PAGE_ID") or cfg.get("PAGE_ID", "")
+TOKEN = os.environ.get("PAGE_ACCESS_TOKEN") or cfg.get("PAGE_ACCESS_TOKEN", "")
 USER_TOKEN_FILE = Path.home() / "facebook_token"
 
 _token_cache = {"at": 0, "data": {}}

@@ -1,0 +1,46 @@
+name: Auto schedule
+
+on:
+  schedule:
+    # Senin 08:30 UTC = 15:30 WIB, setelah Weekly insights
+    - cron: '30 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Jadwalkan 7 konten berikutnya
+        env:
+          PAGE_ID: ${{ secrets.PAGE_ID }}
+          PAGE_ACCESS_TOKEN: ${{ secrets.PAGE_ACCESS_TOKEN }}
+        run: |
+          python - <<'PY'
+          import sys
+          sys.path.insert(0, "tool")
+          import control_panel as cp
+          result = cp.schedule_next_batch()
+          print(result.get("message"))
+          for item in result.get("results", []):
+              print(item.get("id"), item.get("status"), item.get("time") or item.get("detail"))
+          if not result.get("ok") and "habis" not in result.get("message", ""):
+              sys.exit(1)
+          PY
+      - name: Simpan status bank
+        run: |
+          git config user.name "paycheck-playbook-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add content/bank.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto schedule next batch"
+            git push
+          else
+            echo "Bank tidak berubah."
+          fi

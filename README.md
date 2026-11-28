@@ -66,8 +66,15 @@ Buka **http://127.0.0.1:8765** di browser HP, lalu pilih **Add to Home Screen** 
 
 Postingan dikirim oleh Facebook lewat `scheduled_publish_time` — HP tidak perlu menyala terus.
 
-### Berikutnya
+### Berjalan otomatis (tanpa campur tangan)
 
-- Isi `04_TRACKER.csv` dari Insights tiap 3 hari, lalu kirim screenshot ke saya untuk analisis.
-- Cek menu **Monetization** di Page setelah follower bertumbuh.
-- Matikan **Wireless Debugging** di HP (ADB sudah tidak dipakai).
+- `weekly-insights.yml` — Senin 08:00 UTC: tarik Insights, isi `04_TRACKER.csv`, buat draf balasan.
+- `auto-schedule.yml` — Senin 08:30 UTC: jadwalkan 7 konten berikutnya dari `content/bank.json`.
+- Bank berisi **59 konten** (± 8 minggu ke depan). Facebook yang mengirim post pada jamnya — HP tidak perlu menyala.
+
+### Yang masih butuh kamu (tidak bisa lewat API)
+
+- Token dengan `pages_manage_metadata` — hanya untuk foto profil, cover, bio, dan website (opsional).
+- Verifikasi Page, hubungkan Instagram, dan pin welcome post (UI Facebook).
+- Matikan **Wireless Debugging** di HP.
+- Screenshot menu **Monetization** / Insights detail bila ingin analisis retensi lebih dalam.

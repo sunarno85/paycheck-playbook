@@ -166,5 +166,309 @@
     "used": false,
     "scheduled_at": null,
     "post_id": null
+  },
+  {
+    "id": "B29",
+    "title": "True hourly wage",
+    "message": "Your hourly wage isn't what your paycheck says.\n\n• Take weekly pay.\n• Subtract commute costs, lunches and required gear.\n• Divide by hours actually worked including commute.\n• That number is what your time really pays.\n\nSave this before you take a second job. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Paycheck #MoneyTips #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B30",
+    "title": "Emergency fund size",
+    "message": "How big should an emergency fund be?\n\n• Start with $500.\n• Then aim for one month of essentials.\n• Two to six months depends on job stability and dependents.\n• Progress beats a perfect target.\n\nSave this. 👇 What stage are you at?\n\nFor educational purposes only. Not financial advice.\n\n#EmergencyFund #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B31",
+    "title": "Statement closing date",
+    "message": "Your card has two dates. Know both.\n\n• Statement date = when your balance is reported.\n• Due date = when payment must arrive.\n• Paying before the statement can lower reported utilization.\n• Autopay the statement balance to avoid interest.\n\nSave this. 👇 Do you know your closing date?\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditCard #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B32",
+    "title": "Minimum payment trap",
+    "message": "Paying the minimum keeps you in debt longer than you think.\n\n• Minimums are designed to stretch the balance.\n• Interest keeps compounding on what's left.\n• Even a small extra payment shortens the timeline.\n• Check your payoff date on the statement.\n\nSave this. 👇 Want a payoff example?\n\nFor educational purposes only. Not financial advice.\n\n#Debt #CreditCard #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B33",
+    "title": "HSA vs FSA",
+    "message": "Two accounts, different rules.\n\n• HSA pairs with high-deductible plans and carries over.\n• FSA is use-it-or-lose-it, depending on your plan.\n• Contribution limits change yearly.\n• Check your plan documents before choosing.\n\nSave this reminder. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Healthcare #Benefits #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B34",
+    "title": "Roth vs traditional",
+    "message": "Two ways to save for retirement, taxed differently.\n\n• Traditional: possible tax deduction now, taxable later.\n• Roth: no deduction now, qualified withdrawals tax-free.\n• Your income and employer plan decide what's available.\n• Read the plan summary before you pick.\n\nSave this. 👇 Which do you have?\n\nFor educational purposes only. Not financial advice.\n\n#401k #Retirement #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B35",
+    "title": "Tax refund plan",
+    "message": "A refund isn't a bonus — it's your money coming back.\n\n• Cover anything you delayed.\n• Add to your buffer.\n• Pay down the highest-interest balance.\n• Decide the split before the deposit lands.\n\nSave this. 👇 What would you do with yours?\n\nFor educational purposes only. Not financial advice.\n\n#Taxes #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B36",
+    "title": "Check your W-2",
+    "message": "Before you file, check three lines.\n\n• Wages match your pay stubs.\n• Tax withheld looks right.\n• Retirement contributions match your elections.\n• Fix errors with your employer, not the IRS first.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Taxes #Paycheck #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B37",
+    "title": "Budget app or notebook",
+    "message": "The best budget tool is the one you'll open twice a week.\n\n• Apps automate tracking but need setup.\n• A notebook forces attention but takes discipline.\n• A simple spreadsheet sits in the middle.\n• Try one for 30 days, then decide.\n\nSave this. 👇 Which do you use?\n\nFor educational purposes only. Not financial advice.\n\n#Budgeting #MoneyTips #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B38",
+    "title": "Grocery list method",
+    "message": "A list is a spending limit in disguise.\n\n• Plan meals before you shop.\n• Write the list by aisle.\n• Eat before you go — hungry carts cost more.\n• Allow one 'want' item so it doesn't blow up.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Groceries #Budgeting #SavingMoney #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B39",
+    "title": "Meal prep math",
+    "message": "Cooking at home isn't automatically cheaper.\n\n• Compare cost per serving, not sticker price.\n• Batch the ingredients you already buy.\n• Freeze portions before they turn into takeout.\n• Track one week to see the real difference.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#MealPrep #Budgeting #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B40",
+    "title": "Gas price habit",
+    "message": "You don't need to chase the cheapest station.\n\n• Compare the price per gallon on your usual route.\n• Check tire pressure — it affects mileage.\n• Combine errands into one loop.\n• Small habits add up over a month.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#SavingMoney #Budgeting #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B41",
+    "title": "Used car checklist",
+    "message": "Before you buy used, bring a checklist.\n\n• Vehicle history report.\n• Maintenance records.\n• Independent mechanic inspection.\n• Total out-the-door price, not the monthly payment.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#CarBuying #PersonalFinance #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B42",
+    "title": "Lease or buy",
+    "message": "The monthly payment doesn't tell the whole story.\n\n• Leases have mileage limits and fees.\n• Buying builds equity but costs more upfront.\n• Calculate total cost over the same time period.\n• Read the fine print either way.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#CarBuying #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B43",
+    "title": "Rent negotiation",
+    "message": "You can ask before you sign.\n\n• Research comparable rents nearby.\n• Ask about move-in specials or longer lease discounts.\n• Get any promise in writing.\n• Be polite — worst case is no.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Renting #Housing #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B44",
+    "title": "Roommate money talk",
+    "message": "Talk about money before you move in.\n\n• Who pays which bill and when.\n• How shared items are split.\n• What happens if someone moves out.\n• Write it down, even between friends.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Roommates #Housing #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B45",
+    "title": "Split bills fairly",
+    "message": "Not every bill should be split 50/50.\n\n• Split by income share if it's wildly different.\n• Assign household items by who uses them.\n• Use one shared ledger so nobody guesses.\n• Review monthly, not yearly.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Roommates #Budgeting #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B46",
+    "title": "Car loan payoff",
+    "message": "Extra payments only help if they go to principal.\n\n• Check whether your lender applies extras to principal.\n• Ask for a payoff quote.\n• Compare interest saved versus cash needed elsewhere.\n• Keep making the regular payment until it's gone.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#DebtPayoff #CarLoan #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B47",
+    "title": "Call your servicer",
+    "message": "A five-minute call can prevent a big mistake.\n\n• Confirm your balance and interest rate.\n• Ask how extra payments are applied.\n• Request the payoff amount in writing.\n• Save the date and name of who you spoke with.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#StudentLoans #Debt #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B48",
+    "title": "Holiday spending cap",
+    "message": "Decide the number before December starts.\n\n• List everyone you're buying for.\n• Set a per-person amount.\n• Add shipping and wrapping to the total.\n• When the cap is hit, you're done.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#HolidayBudget #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B49",
+    "title": "Gift budget",
+    "message": "Thoughtful doesn't have to mean expensive.\n\n• Set one total, then divide it.\n• Homemade counts.\n• Skip the 'just because' add-ons at checkout.\n• Track as you go, not in January.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Gifts #Budgeting #SavingMoney #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B50",
+    "title": "Giving in the budget",
+    "message": "Giving works better when it's planned.\n\n• Choose a monthly amount first.\n• Keep it separate from savings.\n• Review once a year.\n• No guilt, no guessing at checkout.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Giving #Budgeting #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B51",
+    "title": "Savings APY",
+    "message": "Where you keep savings matters.\n\n• APY is what you actually earn after compounding.\n• Compare similar accounts, not just the big number.\n• Check minimum balance and withdrawal rules.\n• Rates move — review twice a year.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#SavingMoney #Banking #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B52",
+    "title": "CD basics",
+    "message": "A CD trades access for a fixed rate.\n\n• You agree to leave money for a set term.\n• Early withdrawal usually costs a penalty.\n• Laddering means several terms at once.\n• Compare rates and penalties before locking.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Savings #Banking #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B53",
+    "title": "Index fund basics",
+    "message": "An index fund buys a whole basket at once.\n\n• It tracks a list instead of picking winners.\n• Fees still matter over time.\n• Read the expense ratio and holdings.\n• Time in the market usually beats timing it.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Investing #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B54",
+    "title": "Dollar-cost averaging",
+    "message": "Investing the same amount on a schedule removes timing pressure.\n\n• You buy more shares when prices are lower.\n• You buy fewer when prices are higher.\n• It's a rule, not a prediction.\n• Check whether your plan offers automatic contributions.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Investing #Retirement #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B55",
+    "title": "Risk tolerance",
+    "message": "The right investment mix is the one you can hold.\n\n• Ask what a 20% drop would make you do.\n• If you'd sell, the mix is too aggressive.\n• Time horizon changes the answer.\n• Revisit after big life changes.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Investing #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B56",
+    "title": "Retirement math",
+    "message": "A quick retirement check you can do tonight.\n\n• Estimate yearly spending in retirement.\n• Subtract expected guaranteed income.\n• Multiply the gap by 25 as a rough target.\n• That's a starting point, not a promise.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Retirement #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B57",
+    "title": "Social Security statement",
+    "message": "Check your earnings record once a year.\n\n• Make sure reported wages match your work history.\n• Look at the estimated benefit at different ages.\n• Fix errors early, not at claim time.\n• Create the online account if you don't have one.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Retirement #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B58",
+    "title": "Credit freeze",
+    "message": "A credit freeze is free and reversible.\n\n• Freeze with each of the three bureaus.\n• Keep your PINs somewhere safe.\n• It stops new accounts, not existing ones.\n• Unfreeze temporarily when you need new credit.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#IdentityTheft #CreditScore #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B59",
+    "title": "Fraud alert",
+    "message": "A fraud alert is lighter than a freeze.\n\n• One bureau alert usually notifies the others.\n• It asks lenders to verify your identity.\n• It lasts for a set time unless renewed.\n• A freeze is stronger if you're not applying for credit.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#IdentityTheft #Credit #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B60",
+    "title": "Debt collector letter",
+    "message": "You have rights when a collector calls.\n\n• Ask for the amount and original creditor in writing.\n• Don't confirm personal details immediately.\n• Keep every letter and envelope.\n• Dispute in writing within the allowed window.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Debt #ConsumerRights #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B61",
+    "title": "Medical bill",
+    "message": "A hospital bill is often negotiable.\n\n• Request an itemized statement.\n• Compare it to the insurance explanation.\n• Ask about financial assistance policies.\n• Call the billing office before it goes to collections.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#MedicalBills #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B62",
+    "title": "Deductible fund",
+    "message": "A deductible is a bill you can plan for.\n\n• Look up your plan's deductible.\n• Divide it by 12.\n• Set that aside monthly.\n• Care becomes less scary when the cash is ready.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Insurance #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B63",
+    "title": "Home repair fund",
+    "message": "Homes don't wait for a convenient month.\n\n• Start with the big systems: roof, HVAC, water heater.\n• Set a monthly amount even if it's small.\n• Get two quotes before major work.\n• Keep records for resale.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Homeownership #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B64",
+    "title": "Pet emergency fund",
+    "message": "Pet care is a budget line, not a surprise.\n\n• Price a routine visit in your area.\n• Add a cushion for urgent care.\n• Keep it in savings, not credit.\n• Review yearly as they age.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Pets #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B65",
+    "title": "Moving budget",
+    "message": "Moving costs more than the truck.\n\n• List deposits, fees, supplies and time off.\n• Get quotes from two companies.\n• Declutter before you pack — less to move.\n• Add a 10% cushion.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Moving #Budgeting #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B66",
+    "title": "Raise follow-up",
+    "message": "After a raise, don't let it disappear.\n\n• Update your withholding if needed.\n• Split the increase: savings, debt, lifestyle.\n• Decide the split before the first paycheck.\n• Keep the old budget as your baseline.\n\nSave this. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Raise #Paycheck #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
   }
 ]
