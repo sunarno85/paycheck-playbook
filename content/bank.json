@@ -1,0 +1,170 @@
+[
+  {
+    "id": "B08",
+    "title": "Paycheck day order",
+    "message": "The order you handle payday matters more than the amount.\n\n1. Pay yourself first (even $10).\n2. Cover needs.\n3. Cover minimum debt payments.\n4. Wants come last.\n\nSave this before your next deposit. 👇 What do you do first?\n\nFor educational purposes only. Not financial advice.\n\n#Payday #Budgeting #MoneyTips #USMoney #Paycheck",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B09",
+    "title": "First $500 buffer",
+    "message": "Before you invest a single dollar, build a starter buffer of $500.\n\nIt's not an emergency fund yet — it's a shock absorber. Flat tire, small medical bill, late paycheck.\n\nKeep it in a separate savings account so you don't spend it by accident.\n\nSave this. 👇 How close are you to your first $500?\n\nFor educational purposes only. Not financial advice.\n\n#EmergencyFund #SavingMoney #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B10",
+    "title": "Check your credit report",
+    "message": "You get one free credit report per year from each bureau. Use it.\n\nLook for:\n• accounts you don't recognize\n• wrong balances\n• late payments that aren't yours\n\nDispute errors in writing. Keep copies of everything.\n\nSave this reminder. 👇 When did you last check yours?\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditReport #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B11",
+    "title": "401(k) match basics",
+    "message": "If your employer matches contributions, that's part of your compensation.\n\nCommon rule: contribute at least enough to get the full match before anything else.\n\nCheck two things today:\n• your match percentage\n• your vesting schedule\n\nSave this before you change your contributions. 👇\n\nFor educational purposes only. Not financial advice.\n\n#401k #Retirement #PersonalFinance #USMoney #Paycheck",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B12",
+    "title": "Snowball vs avalanche",
+    "message": "Two ways to pay off debt:\n\nSnowball: smallest balance first. Fast wins, more motivation.\nAvalanche: highest interest first. Less total interest paid.\n\nThe best method is the one you'll actually stick with.\n\nSave this. 👇 Which one are you using?\n\nFor educational purposes only. Not financial advice.\n\n#DebtPayoff #PersonalFinance #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B13",
+    "title": "Why your score dipped",
+    "message": "Your score can drop even when you did nothing 'wrong'.\n\nCommon reasons:\n• a card's reported balance went up\n• a new account lowered your average age\n• a hard inquiry\n• an old account aged off\n\nCheck the report before you panic. 👇 Save this.\n\nFor educational purposes only. Not financial advice.\n\n#CreditScore #CreditUtilization #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B14",
+    "title": "Stop blaming your coffee",
+    "message": "Cutting coffee won't fix a budget built on rent and debt.\n\nThe latte factor is real but small. The big levers are:\n• housing\n• transport\n• recurring bills\n• interest rates\n\nAudit the big four first. The small stuff comes later.\n\nSave this. 👇 What's your biggest line item?\n\nFor educational purposes only. Not financial advice.\n\n#Budgeting #MoneyTips #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B15",
+    "title": "Ask for a better rate",
+    "message": "One phone call can lower a bill.\n\nTry: 'I've been a customer for a while and I'd like to stay. Could you check if there's a lower rate or retention offer available?'\n\nPolite, specific, one request. Worst case: no.\n\nSave this before your next bill. 👇\n\nFor educational purposes only. Not financial advice.\n\n#MoneyTips #Bills #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B16",
+    "title": "Sinking funds",
+    "message": "A sinking fund is savings for a known future expense.\n\nExamples: car repair, holiday gifts, annual insurance, school supplies.\n\nPick one. Divide the cost by the months until you need it. Save that amount each payday.\n\nNo surprises = no credit card.\n\nSave this. 👇 What's your next sinking fund?\n\nFor educational purposes only. Not financial advice.\n\n#SavingMoney #Budgeting #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B17",
+    "title": "Zero-based budget",
+    "message": "Zero-based budget doesn't mean spending everything.\n\nIt means every dollar has a job: needs, wants, savings, debt, giving.\n\nIncome minus outflow equals zero — on paper, not in your checking account.\n\nSave this template idea. 👇 Want a worked example?\n\nFor educational purposes only. Not financial advice.\n\n#ZeroBasedBudget #Budgeting #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B18",
+    "title": "Cash envelope idea",
+    "message": "If you overspend in one category, try envelopes.\n\nSet a monthly amount for groceries, gas, and eating out. When the envelope is empty, you're done for the month.\n\nDigital version: separate savings accounts or a notes app with running totals.\n\nSave this. 👇 Which category needs an envelope?\n\nFor educational purposes only. Not financial advice.\n\n#CashEnvelope #Budgeting #SavingMoney #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B19",
+    "title": "Automate the boring part",
+    "message": "Willpower is unreliable. Automation isn't.\n\nSet up on payday:\n• auto-transfer to savings\n• autopay for minimums\n• auto-invest if that's your goal\n\nThen check in once a month instead of deciding every day.\n\nSave this. 👇 What would you automate first?\n\nFor educational purposes only. Not financial advice.\n\n#PersonalFinance #SavingMoney #Paycheck #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B20",
+    "title": "Audit subscriptions again",
+    "message": "Do this every 30 days, not once a year.\n\nOpen your last card statement. Circle every recurring charge. Ask three questions:\n• Did I use it this month?\n• Would I miss it?\n• Is there a cheaper plan?\n\nCancel one thing today.\n\nComment 'AUDIT' if you found one. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Subscriptions #Budgeting #SavingMoney #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B21",
+    "title": "Autopay safety net",
+    "message": "Autopay prevents late fees — but it needs a safety net.\n\nKeep a minimum balance in checking, link a backup account, and turn on low-balance alerts.\n\nThen check statements once a month anyway.\n\nSave this. 👇 Do you use autopay?\n\nFor educational purposes only. Not financial advice.\n\n#Banking #CreditScore #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B22",
+    "title": "Ask for a raise",
+    "message": "Prepare before you ask.\n\nWrite down:\n• what you delivered in the last 6–12 months\n• numbers, not adjectives\n• the market rate for your role\n• a specific amount\n\nThen request a meeting. Practice the 30-second version out loud.\n\nSave this. 👇 Want the exact script?\n\nFor educational purposes only. Not financial advice.\n\n#Career #Paycheck #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B23",
+    "title": "Side income sanity check",
+    "message": "Before starting a side hustle, check three things:\n\n1. Do you have time after sleep and a real day job?\n2. What are the startup costs?\n3. Does it conflict with your main job's policy?\n\nBoring questions first. Fun part later.\n\nSave this. 👇 What side income are you considering?\n\nFor educational purposes only. Not financial advice.\n\n#SideHustle #MoneyTips #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B24",
+    "title": "The sales tax surprise",
+    "message": "A $500 purchase isn't $500 at checkout.\n\nSales tax varies by state and city. Online orders may collect it too.\n\nBefore a big purchase, check the final total — not the sticker price.\n\nSave this before your next cart. 👇\n\nFor educational purposes only. Not financial advice.\n\n#Shopping #Budgeting #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B25",
+    "title": "BNPL reality check",
+    "message": "'Pay in 4' is still debt.\n\nIt can be useful for a planned purchase you can already afford. It becomes a problem when it covers a gap in your budget.\n\nBefore you click: is the money already in your account?\n\nSave this. 👇 Have you used BNPL?\n\nFor educational purposes only. Not financial advice.\n\n#BNPL #Debt #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B26",
+    "title": "Insurance checkup",
+    "message": "Once a year, check:\n• health plan network and deductible\n• auto coverage limits\n• renters/home policy\n• beneficiaries\n\nA 30-minute review can prevent a five-figure surprise.\n\nSave this reminder. 👇 When did you last review yours?\n\nFor educational purposes only. Not financial advice.\n\n#Insurance #PersonalFinance #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B27",
+    "title": "Weekly money date",
+    "message": "Pick one day a week, 20 minutes, same time.\n\nReview:\n• what came in\n• what went out\n• next week's bills\n• one small win\n\nThat's it. No spreadsheets required unless you like them.\n\nSave this. 👇 Which day works for you?\n\nFor educational purposes only. Not financial advice.\n\n#MoneyDate #Budgeting #PersonalFinance #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  },
+  {
+    "id": "B28",
+    "title": "Your 3-number snapshot",
+    "message": "If tracking everything feels heavy, track three numbers:\n\n1. Checking balance\n2. Total debt\n3. Savings balance\n\nCheck them every Friday. Trends tell you more than daily noise.\n\nSave this. 👇 What are your three numbers today?\n\nFor educational purposes only. Not financial advice.\n\n#PersonalFinance #SavingMoney #MoneyTips #USMoney",
+    "used": false,
+    "scheduled_at": null,
+    "post_id": null
+  }
+]

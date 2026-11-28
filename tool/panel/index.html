@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0F3D3E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Paycheck Playbook">
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icon.png">
+<title>Paycheck Playbook — Control Panel</title>
+<style>
+  :root{--bg:#071F2B;--card:#0F3D3E;--card2:#12494A;--mint:#57C5B0;--mint2:#8FE3D0;--text:#E9F7F4;--muted:#A9C9C5;--danger:#FF8B8B}
+  *{box-sizing:border-box}
+  body{margin:0;background:radial-gradient(1200px 600px at 80% -10%,#12494A 0,var(--bg) 60%);color:var(--text);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh;padding:18px 16px 40px}
+  header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+  .logo{width:44px;height:44px;border-radius:14px;background:linear-gradient(135deg,#0F3D3E,#071F2B);border:2px solid var(--mint);display:grid;place-items:center;font-weight:800;color:var(--mint2)}
+  h1{font-size:19px;margin:0;letter-spacing:.2px}
+  .sub{color:var(--muted);font-size:12px;margin-top:2px}
+  .pill{margin-left:auto;font-size:12px;padding:6px 11px;border-radius:99px;background:#0b2f31;border:1px solid #25615f;color:var(--mint2)}
+  .pill.live{border-color:#2f8f7c;box-shadow:0 0 0 3px rgba(87,197,176,.12)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  .card{background:linear-gradient(180deg,rgba(18,73,74,.92),rgba(15,61,62,.92));border:1px solid rgba(143,227,208,.16);border-radius:18px;padding:16px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+  .card h2{font-size:12px;text-transform:uppercase;letter-spacing:1.2px;color:var(--mint);margin:0 0 10px}
+  .kv{display:flex;justify-content:space-between;gap:10px;padding:5px 0;border-bottom:1px dashed rgba(143,227,208,.12);font-size:13px}
+  .kv:last-child{border:0}
+  .kv span:first-child{color:var(--muted)}
+  .kv span:last-child{text-align:right;max-width:62%;word-break:break-word}
+  ul{margin:8px 0 0;padding-left:18px;color:var(--muted);font-size:13px}
+  li{margin:3px 0}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .chip{font-size:10px;padding:3px 8px;border-radius:99px;background:rgba(87,197,176,.13);border:1px solid rgba(87,197,176,.25);color:var(--mint2)}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+  button{font:inherit;font-weight:650;cursor:pointer;border:0;border-radius:12px;padding:11px 16px;background:var(--mint);color:#062a2b;transition:.15s transform,.15s filter}
+  button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+  button.ghost{background:transparent;color:var(--mint2);border:1px solid #2f6f6b}
+  button.warn{background:#3a2a2a;color:#ffc4c4;border:1px solid #7a4a4a}
+  button:disabled{opacity:.55;cursor:wait;transform:none}
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th,td{text-align:left;padding:8px 6px;border-bottom:1px solid rgba(143,227,208,.12)}
+  th{color:var(--mint);font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+  pre{white-space:pre-wrap;word-break:break-word;font:12px/1.5 ui-monospace,Menlo,monospace;color:var(--muted);max-height:220px;overflow:auto;margin:0}
+  .foot{color:var(--muted);font-size:11px;text-align:center;margin-top:22px}
+  #toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(140%);background:var(--mint2);color:#062a2b;padding:11px 18px;border-radius:12px;font-weight:650;transition:.25s;z-index:9;max-width:90vw;text-align:center}
+  #toast.show{transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo">PP</div>
+  <div><h1>Paycheck Playbook</h1><div class="sub">Control Panel · otomasi konten</div></div>
+  <div class="pill live" id="pill">Memuat…</div>
+</header>
+
+<div class="actions">
+  <button id="btn-schedule">Jadwalkan 7 hari berikutnya</button>
+  <button class="ghost" id="btn-preview">Pratinjau</button>
+  <button class="ghost" id="btn-insights">Tarik Insights</button>
+  <button class="ghost" id="btn-secrets">Sinkron Secrets</button>
+  <button class="ghost" id="btn-refresh">Refresh</button>
+</div>
+
+<div class="grid">
+  <section class="card"><h2>Halaman</h2><div id="page"></div></section>
+  <section class="card"><h2>Token & Izin</h2><div id="token"></div></section>
+  <section class="card"><h2>Bank Konten</h2><div id="bank"></div></section>
+  <section class="card"><h2>Insights Terakhir</h2><div id="insights"></div></section>
+</div>
+
+<section class="card" style="margin-top:12px"><h2>Jadwal Mendatang</h2><table><thead><tr><th>Waktu ET</th><th>Konten</th></tr></thead><tbody id="jadwal"></tbody></table></section>
+<section class="card" style="margin-top:12px"><h2>Draf Balasan Komentar</h2><pre id="replies">Memuat…</pre></section>
+
+<div class="foot">Token tidak pernah ditampilkan di panel ini · data dibaca dari perangkatmu</div>
+<div id="toast"></div>
+
+<script>
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const kv = (k,v) => `<div class="kv"><span>${esc(k)}</span><span>${esc(v || '-')}</span></div>`;
+let toastTimer;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('show'),3200)}
+async function api(path, method='GET'){
+  const r=await fetch(path,{method}); if(!r.ok) throw new Error('HTTP '+r.status); return r.json();
+}
+async function refresh(){
+  try{
+    const d=await api('/api/status');
+    document.getElementById('pill').textContent=d.page && d.page.name ? '● Page aktif' : '● Cek koneksi';
+    document.getElementById('page').innerHTML=kv('Nama',d.page.name)+kv('Username','@'+(d.page.username||'-'))+kv('Kategori',d.page.category)+kv('About',d.page.about)+kv('Reel tayang',d.counts.videos)+kv('Post terjadwal',d.counts.scheduled);
+    const t=d.token||{};
+    document.getElementById('token').innerHTML=kv('App',t.app)+kv('Status',t.valid?'Valid':'Tidak tersedia')+kv('Kedaluwarsa',t.expires)+`<div class="chips">${(t.scopes||[]).map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div>`;
+    document.getElementById('bank').innerHTML=kv('Total konten',d.bank.total)+kv('Sudah dipakai',d.bank.used)+kv('Sisa',d.bank.total-d.bank.used)+'<ul>'+(d.bank.next||[]).map(x=>`<li>${esc(x)}</li>`).join('')+'</ul>';
+    const tr=d.tracker||{};
+    document.getElementById('insights').innerHTML=kv('Tanggal',tr.last_date)+kv('Views',tr.views)+kv('Catatan',tr.note);
+    document.getElementById('jadwal').innerHTML=(d.scheduled||[]).length ? d.scheduled.map(x=>`<tr><td>${esc(x.time)}</td><td>${esc(x.preview)}</td></tr>`).join('') : '<tr><td colspan="2">Belum ada jadwal.</td></tr>';
+  }catch(e){toast('Gagal memuat status: '+e.message)}
+  try{const r=await api('/api/replies');document.getElementById('replies').textContent=r.text||'Belum ada komentar.'}catch(e){}
+}
+async function action(btn, endpoint, confirmMsg){
+  if(confirmMsg && !confirm(confirmMsg)) return;
+  const old=btn.textContent; btn.disabled=true; btn.textContent='Memproses…';
+  try{const r=await api(endpoint,'POST');toast(r.message||(r.ok?'Berhasil':'Gagal'));await refresh()}
+  catch(e){toast('Error: '+e.message)}
+  finally{btn.disabled=false;btn.textContent=old}
+}
+async function preview(){
+  try{
+    const r=await fetch('/api/schedule',{method:'POST',headers:{'Content-Type':'application/json'},body:'{"preview":true}'}).then(x=>x.json());
+    toast((r.results||[]).map(x=>x.time.split(' ')[0]).join(', ')||r.message);
+  }catch(e){toast('Error: '+e.message)}
+}
+document.getElementById('btn-preview').onclick=preview;
+document.getElementById('btn-schedule').onclick=e=>action(e.target,'/api/schedule','Jadwalkan 7 post berikutnya dari bank konten?');
+document.getElementById('btn-insights').onclick=e=>action(e.target,'/api/insights');
+document.getElementById('btn-secrets').onclick=e=>action(e.target,'/api/secrets','Sinkronkan config.env ke GitHub Secrets?');
+document.getElementById('btn-refresh').onclick=refresh;
+refresh(); setInterval(refresh, 60000);
+</script>
+</body>
+</html>

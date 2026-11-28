@@ -56,6 +56,16 @@ bash ~/fb-us-money/tool/publish_all.sh                       # build + publish s
 bash ~/fb-us-money/tool/publish_from_dir.sh /path/ke/output   # publish dari artifact tanpa rebuild
 ```
 
+### Control Panel (dashboard HP)
+
+```bash
+bash ~/fb-us-money/tool/start_panel.sh
+```
+
+Buka **http://127.0.0.1:8765** di browser HP, lalu pilih **Add to Home Screen** supaya tampil seperti aplikasi. Panel menampilkan status Page, token/izin, jadwal, Insights, dan draf balasan komentar. Tombol **Pratinjau** menunjukkan tanggal sebelum menjadwalkan 7 konten berikutnya dari `content/bank.json`.
+
+Postingan dikirim oleh Facebook lewat `scheduled_publish_time` — HP tidak perlu menyala terus.
+
 ### Berikutnya
 
 - Isi `04_TRACKER.csv` dari Insights tiap 3 hari, lalu kirim screenshot ke saya untuk analisis.

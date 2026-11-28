@@ -7,4 +7,5 @@ assets/_tmp/
 __pycache__/
 *.pyc
 *.log
+*.pid
 assets/*.png
