@@ -186,15 +186,66 @@ def fetch_clips(cfg, reel, outdir):
     return paths
 
 
+def probe_size(path):
+    """Ukuran asli klip stok, dipakai untuk memilih mode fit/cover."""
+    probe = need("ffprobe")
+    if not probe:
+        return None
+    r = run([probe, "-v", "error", "-select_streams", "v:0",
+             "-show_entries", "stream=width,height",
+             "-of", "csv=p=0:s=x", str(path)])
+    try:
+        w, h = r.stdout.strip().split("x")[:2]
+        return int(w), int(h)
+    except (ValueError, AttributeError):
+        return None
+
+
+def prepare_overlay(text):
+    """Bungkus teks supaya tidak melewati margin 45 px dan tidak terpotong."""
+    text = text.strip()
+    size, max_chars = (62, 22) if len(text) <= 22 else (52, 26)
+    lines, current = [], ""
+    for word in text.split():
+        candidate = word if not current else current + " " + word
+        if len(candidate) <= max_chars:
+            current = candidate
+        else:
+            lines.append(current)
+            current = word
+    if current:
+        lines.append(current)
+    if len(lines) > 3:
+        lines = lines[:3]
+        lines[2] = lines[2][:max_chars - 1] + "…"
+    y_frac = 0.68 - 0.055 * (len(lines) - 1)
+    border = 14 if size >= 58 else 12
+    return "\n".join(lines), size, border, y_frac
+
+
 def build_filter(cfg, reel, clips, dur, with_overlays=True):
-    seg = dur / len(clips)
+    """Render 1080x1920: klip portrait dipotong minimal, klip landscape
+    tetap utuh di atas background blur, teks dibungkus dalam safe area."""
+    W, H, seg = 1080, 1920, dur / len(clips)
     parts = []
-    for i, _ in enumerate(clips):
-        parts.append(
-            f"[{i}:v]scale=1080:1920:force_original_aspect_ratio=increase,"
-            f"crop=1080:1920,setsar=1,fps=30,trim=duration={seg:.3f},"
-            f"setpts=PTS-STARTPTS[v{i}]"
-        )
+    for i, clip in enumerate(clips):
+        w, h = probe_size(clip) or (W, H)
+        timing = (f"fps=30,trim=duration={seg:.3f},setpts=PTS-STARTPTS,"
+                  f"tpad=stop_mode=clone:stop_duration={seg:.3f},"
+                  f"trim=duration={seg:.3f},setpts=PTS-STARTPTS")
+        if abs(w / h - W / H) < 0.03:
+            parts.append(
+                f"[{i}:v]scale={W}:{H}:force_original_aspect_ratio=increase,"
+                f"crop={W}:{H},setsar=1,{timing}[v{i}]")
+        else:
+            parts += [
+                f"[{i}:v]{timing},split=2[fg{i}][bg{i}]",
+                f"[bg{i}]scale={W}:{H}:force_original_aspect_ratio=increase,"
+                f"crop={W}:{H},boxblur=24:6,eq=brightness=-0.18,setsar=1[bgf{i}]",
+                f"[fg{i}]scale={W}:{H}:force_original_aspect_ratio=decrease,"
+                f"setsar=1[fgf{i}]",
+                f"[bgf{i}][fgf{i}]overlay=(W-w)/2:(H-h)/2,setsar=1[v{i}]",
+            ]
     parts.append("".join(f"[v{i}]" for i in range(len(clips))) +
                  f"concat=n={len(clips)}:v=1:a=0[base]")
     overlays = reel.get("overlays", []) if with_overlays else []
@@ -209,13 +260,16 @@ def build_filter(cfg, reel, clips, dur, with_overlays=True):
     for i, text in enumerate(overlays):
         start = 0.0 if i == 0 else first_end + step * (i - 1)
         end = first_end if i == 0 else min(dur, first_end + step * i)
+        wrapped, size, border, y_frac = prepare_overlay(text)
         tf = TMP / f"{reel['id']}_ov_{i}.txt"
-        tf.write_text(text, encoding="utf-8")
+        tf.write_text(wrapped, encoding="utf-8")
         prev = "base" if i == 0 else f"ov{i - 1}"
         parts.append(
             f"[{prev}]drawtext=fontfile={esc(font)}:textfile={esc(str(tf))}:"
-            f"fontcolor=white:fontsize=62:box=1:boxcolor=black@0.35:boxborderw=16:"
-            f"x=(w-text_w)/2:y=h*0.70:enable='between(t,{start:.2f},{end:.2f})'[ov{i}]"
+            f"fontcolor=white:fontsize={size}:line_spacing=8:"
+            f"box=1:boxcolor=black@0.40:boxborderw={border}:"
+            f"x='max(45,min(w-text_w-45,(w-text_w)/2))':y=h*{y_frac:.3f}:"
+            f"enable='between(t,{start:.2f},{end:.2f})'[ov{i}]"
         )
     return ";".join(parts), f"ov{len(overlays) - 1}"
 
@@ -249,6 +303,11 @@ def render(cfg, reel, audio, clips, out):
     if r.returncode != 0:
         log(f"ERROR render {reel['id']}: {r.stderr[-600:] if r.stderr else 'unknown'}")
         return False
+    vw, vh = probe_size(out) or (0, 0)
+    if (vw, vh) != (1080, 1920):
+        log(f"ERROR: resolusi {vw}x{vh}, diharapkan 1080x1920")
+        return False
+    log(f"validasi: {vw}x{vh}, {duration(out):.1f}s (audio {dur:.1f}s)")
     log(f"video siap: {out}")
     return True
 
